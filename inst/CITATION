@@ -1,11 +1,8 @@
 bibentry(
-  bibtype = "Article",
-  title = ,
-  author = ,
-  journal = ,
-  year = ,
-  volume = ,
-  number = ,
-  pages = ,
-  doi =
+  bibtype  = "Manual",
+  title    = "whodigitalhealthmonitor: Structuring, Scoring, and Visualizing Digital Health Maturity",
+  author   = person("Utkarsha", "Tiwari"),
+  year     = "2026",
+  note     = "R package version 0.0.0.9000",
+  url      = "https://github.com/Utkarshatiwari2/whodigitalhealthmonitor"
 )
