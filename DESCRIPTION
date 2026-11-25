@@ -1,0 +1,28 @@
+Package: whodigitalhealthmonitor
+Title: Global Digital Health Index and Monitor Maturity Scoring
+Version: 0.0.0.9000
+Authors@R:
+    person("Utkarsha", "Tiwari", email = "drutkarsha.tiwari.official@gmail.com",
+           role = c("aut", "cre"))
+Description: Tools for structuring, validating, and scoring digital health
+    ecosystem maturity across the seven WHO/ITU eHealth Strategy Framework
+    components and core indicators defined in the Global Digital Health Index
+    (GDHI) Indicator Guide (evolved into the Global Digital Health Monitor).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports:
+    cli,
+    dplyr,
+    ggplot2,
+    rlang,
+    tibble,
+    tidyr
+Suggests:
+    knitr,
+    pkgdown,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.1
+VignetteBuilder: knitr

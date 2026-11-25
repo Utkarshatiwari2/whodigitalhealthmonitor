@@ -1,0 +1,72 @@
+---
+title: "Scoring Custom Digital Health Datasets with whodigitalhealthmonitor"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Scoring Custom Digital Health Datasets with whodigitalhealthmonitor}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(whodigitalhealthmonitor)
+```
+
+## Overview
+
+`whodigitalhealthmonitor` lets researchers, evaluators, and health system teams
+import their own survey or assessment tables (such as CSV or Excel files) and
+score digital health ecosystem maturity against the Global Digital Health Index
+(GDHI) indicator structure.
+
+## 1. Inspect the Indicator Dictionary
+
+```{r}
+dict <- gdhi_indicator_dictionary()
+head(dict, 10)
+```
+
+## 2. Convert Raw WEF Network Readiness Scores (Indicator 15)
+
+If your dataset contains raw WEF Network Readiness Index scores (`1.0` to `7.0`)
+for Indicator 15, convert them to GDHI maturity phases (`1` to `5`) first:
+
+```{r}
+wef_to_phase15(c(2.8, 3.6, 4.5, 5.2, 6.0))
+```
+
+## 3. Score Your Own Dataset
+
+Prepare or import a data frame or tibble with an entity identifier column
+(such as `region`, `district`, or `country`) and numeric columns (`1` to `5`)
+matching GDHI indicator IDs (such as `IND_01` through `IND_19`):
+
+```{r}
+user_data <- tibble::tibble(
+  entity = c("Region_Alpha", "Region_Beta"),
+  IND_01 = c(4, 2),
+  IND_02 = c(3, 2),
+  IND_03 = c(4, 2),
+  IND_04 = c(3, 1),
+  IND_13 = c(3, 2),
+  IND_14 = c(2, 1),
+  IND_15 = c(4, 3),
+  IND_16 = c(3, 2),
+  IND_17 = c(4, 2)
+)
+
+scores <- gdhi_score_maturity(user_data, id_col = entity)
+scores
+```
+
+## 4. Visualize Component Maturity
+
+```{r, fig.width = 7, fig.height = 4}
+gdhi_plot_components(scores, id_col = entity)
+```
