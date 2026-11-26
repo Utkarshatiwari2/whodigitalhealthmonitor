@@ -26,4 +26,6 @@ Suggests:
 Config/testthat/edition: 3
 Config/roxygen2/version: 8.1.1
 VignetteBuilder: knitr
-URL: https://utkarshatiwari2.github.io/whodigitalhealthmonitor/
+URL: https://utkarshatiwari2.github.io/whodigitalhealthmonitor/,
+    https://github.com/Utkarshatiwari2/whodigitalhealthmonitor
+BugReports: https://github.com/Utkarshatiwari2/whodigitalhealthmonitor/issues
