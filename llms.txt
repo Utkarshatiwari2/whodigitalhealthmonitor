@@ -13,8 +13,7 @@ GitHub:
 
 ``` r
 
-# install.packages("remotes")
-remotes::install_github("<your-github-username>/whodigitalhealthmonitor")
+install.packages("remotes"); remotes::install_github("Utkarshatiwari2/whodigitalhealthmonitor")
 ```
 
 ## Quick Start with Your Own Data
