@@ -6,6 +6,9 @@
 
 ## Citation
 
+Source:
+[`inst/CITATION`](https://github.com/Utkarshatiwari2/whodigitalhealthmonitor/blob/main/inst/CITATION)
+
 Tiwari U (2026). *whodigitalhealthmonitor: Structuring, Scoring, and
 Visualizing Digital Health Maturity*. R package version 0.0.0.9000,
 <https://github.com/Utkarshatiwari2/whodigitalhealthmonitor>.
